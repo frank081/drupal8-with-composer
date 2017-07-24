@@ -24,4 +24,5 @@ RUN curl -s -f -L -o /tmp/installer.php https://raw.githubusercontent.com/compos
  && composer --ansi --version --no-interaction
 
 RUN cd /var/www/html \
- && composer install --dev
+ && composer install --dev \
+ && mkdir /var/www/html/modules/custom
