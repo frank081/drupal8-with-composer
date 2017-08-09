@@ -1,7 +1,7 @@
 FROM drupal:8.3
 
 RUN apt-get update -y \
-  && apt-get install -y git-core openssh-client openssl wget
+  && apt-get install -y git-core openssh-client openssl
 
 RUN echo "memory_limit=-1" > "$PHP_INI_DIR/conf.d/memory-limit.ini" \
  && echo "date.timezone=${PHP_TIMEZONE:-UTC}" > "$PHP_INI_DIR/conf.d/date_timezone.ini"
@@ -29,7 +29,7 @@ RUN cd /var/www/html \
  && mkdir /var/www/html/modules/custom
  
 RUN cd /usr/lib \
- && wget https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-2.1.1-linux-x86_64.tar.bz2 \
+ && curl https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-2.1.1-linux-x86_64.tar.bz2 > phantomjs-2.1.1-linux-x86_64.tar.bz2 \
  && mkdir phantomjs \
  && tar -xjvf phantomjs-2.1.1-linux-x86_64.tar.bz2 -C phantomjs \
  && rm phantomjs-2.1.1-linux-x86_64.tar.bz2 \
