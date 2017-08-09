@@ -1,7 +1,7 @@
 FROM drupal:8.3
 
 RUN apt-get update -y \
-  && apt-get install -y git-core openssh-client openssl
+  && apt-get install -y git-core openssh-client openssl wget
 
 RUN echo "memory_limit=-1" > "$PHP_INI_DIR/conf.d/memory-limit.ini" \
  && echo "date.timezone=${PHP_TIMEZONE:-UTC}" > "$PHP_INI_DIR/conf.d/date_timezone.ini"
