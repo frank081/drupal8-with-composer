@@ -24,16 +24,16 @@ RUN curl -s -f -L -o /tmp/installer.php https://raw.githubusercontent.com/compos
  && rm /tmp/installer.php \
  && composer --ansi --version --no-interaction
 
-#RUN cd /var/www/html \
-# && composer install --dev \
-# && mkdir /var/www/html/modules/custom
+RUN cd /var/www/html \
+ && composer install --dev \
+ && mkdir /var/www/html/modules/custom
  
-#RUN cd /usr/lib \
-# && wget https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-2.1.1-linux-x86_64.tar.bz2 \
-# && mkdir phantomjs \
-# && tar -xjvf phantomjs-2.1.1-linux-x86_64.tar.bz2 -C phantomjs \
-# && rm phantomjs-2.1.1-linux-x86_64.tar.bz2 \
-# && ln -s /usr/lib/phantomjs/bin/phantomjs /usr/bin/phantomjs
+RUN cd /usr/lib \
+ && wget https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-2.1.1-linux-x86_64.tar.bz2 \
+ && mkdir phantomjs \
+ && tar -xjvf phantomjs-2.1.1-linux-x86_64.tar.bz2 -C phantomjs \
+ && rm phantomjs-2.1.1-linux-x86_64.tar.bz2 \
+ && ln -s /usr/lib/phantomjs/bin/phantomjs /usr/bin/phantomjs
 
 #ENTRYPOINT ["docker-php-entrypoint"]
 #WORKDIR /var/www/html
