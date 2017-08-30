@@ -35,6 +35,7 @@ RUN cd /usr/lib \
  && rm phantomjs-2.1.1-linux-x86_64.tar.bz2 \
  && ln -s /usr/lib/phantomjs/bin/phantomjs /usr/bin/phantomjs
 
+
 #ENTRYPOINT ["docker-php-entrypoint"]
 #WORKDIR /var/www/html
 #EXPOSE 9000
